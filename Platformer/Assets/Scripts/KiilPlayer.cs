@@ -5,13 +5,11 @@ using UnityEngine.Events;
 
 public class KiilPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerToKill;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Player>(out Player player))
+        if (collision.TryGetComponent<Player>(out Player player))  
         {
-            Destroy(_playerToKill);
+            Destroy(collision.gameObject);
         }
     }
 }
