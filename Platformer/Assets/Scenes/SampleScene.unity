@@ -287,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coin: {fileID: 5123363271162813908, guid: fc84ddaa0443df542a76cceed860ba42, type: 3}
   _maxNumberOfCoins: 8
+  CurrentNumberOfCoins: 0
 --- !u!1 &680544951
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 1254927647}
-  _jumpForce: 30
+  _jumpForce: 10
 --- !u!114 &1254927655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1cbee4e4cd67d46807d7ec85b1cedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnOfCoins: {fileID: 519420033}
 --- !u!1001 &1313540979
 PrefabInstance:
   m_ObjectHideFlags: 0

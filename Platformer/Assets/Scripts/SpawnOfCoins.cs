@@ -7,21 +7,22 @@ public class SpawnOfCoins : MonoBehaviour
     [SerializeField] private Coin _coin;
     [SerializeField] private int _maxNumberOfCoins;
 
-    private int CurrentNumberOfCoins;
-    private GameObject[] currentNumberOfCoins;
+    public int CurrentNumberOfCoins;
+
+    private void Start()
+    {
+        StartCoroutine(CreateCoins());
+    }
 
     private void Update()
     {
-        currentNumberOfCoins = GameObject.FindGameObjectsWithTag("Coin");
-
-        if (currentNumberOfCoins.Length < _maxNumberOfCoins)
+        if (CurrentNumberOfCoins < _maxNumberOfCoins)
         {
-            CurrentNumberOfCoins = currentNumberOfCoins.Length;
-            CreateCoins();
+            StartCoroutine(CreateCoins());
         }
     }
 
-    private void CreateCoins()
+    private IEnumerator CreateCoins()
     {
         float leftBorderOfSpawn = -18;
         float rightBorderOfSpawn = 17;
@@ -36,6 +37,7 @@ public class SpawnOfCoins : MonoBehaviour
 
             Coin newCoin = Instantiate(_coin, new Vector3(coordinateX, coordinateY, coordinateZ), Quaternion.identity);
             CurrentNumberOfCoins++;
+            yield return null;
         }
     }
 }
