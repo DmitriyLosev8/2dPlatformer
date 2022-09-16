@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectCoins : MonoBehaviour
+public class CoinCollector : MonoBehaviour
 {
     private int _wallet;
-    [SerializeField] private SpawnOfCoins _spawnOfCoins;
+    [SerializeField] private CoinsSpawner _spawnOfCoins;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float _speed;
-    [SerializeField] Animator _animator;
+    [SerializeField] private float _speed;
+    [SerializeField] private Animator _animator;
 
     private const string Moving = "Moving";
 

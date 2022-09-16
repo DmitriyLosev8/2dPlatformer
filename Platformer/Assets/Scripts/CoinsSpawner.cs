@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnOfCoins : MonoBehaviour
+public class CoinsSpawner : MonoBehaviour
 {
     [SerializeField] private Coin _coin;
     [SerializeField] private int _maxNumberOfCoins;
@@ -11,18 +11,18 @@ public class SpawnOfCoins : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CreateCoins());
+        CreateCoins();
     }
 
     private void Update()
     {
         if (CurrentNumberOfCoins < _maxNumberOfCoins)
         {
-            StartCoroutine(CreateCoins());
+            CreateCoins();
         }
     }
 
-    private IEnumerator CreateCoins()
+    private void CreateCoins()
     {
         float leftBorderOfSpawn = -18;
         float rightBorderOfSpawn = 17;
@@ -36,8 +36,7 @@ public class SpawnOfCoins : MonoBehaviour
             float coordinateZ = 0;
 
             Coin newCoin = Instantiate(_coin, new Vector3(coordinateX, coordinateY, coordinateZ), Quaternion.identity);
-            CurrentNumberOfCoins++;
-            yield return null;
+            CurrentNumberOfCoins++;  
         }
     }
 }
